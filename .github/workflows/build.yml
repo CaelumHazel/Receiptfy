@@ -1,48 +1,38 @@
-name: Build and Deploy with EAS
+# this config is executed when running a build with `android-build-with-credentials` profile
+# check the profile's configuration in eas.json to see what are the settings needed to execute it properly
 
-on:
-  push:
-    branches:
-      - main
+build:
+  name: Android build without credentials as executed by eas/build command
+  steps:
+    # all of these steps can be replaced by the single
+    # - eas/build
+    # call
+    # this example aims to show what steps are executed under the hood
+    # it can be useful to know it if somebody wants to alter and customize the default build process
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+    - eas/checkout
 
-    steps:
-      # Step to checkout the code
-      - name: Checkout code
-        uses: actions/checkout@v3
+    # if you are not interested in using custom .npmrc config you can skip it
+    - eas/use_npm_token
 
-      # Step to set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+    - eas/install_node_modules
 
-      # Step to install dependencies
-      - name: Install dependencies
-        run: npm install
+    - eas/resolve_build_config
 
-      # Step to install EAS CLI
-      - name: Install EAS CLI
-        run: npm install -g eas-cli
+    - eas/prebuild
 
-      # Set Expo token from GitHub Secrets
-      - name: Set Expo token
-        run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
+    # if you are not using EAS Update you can remove this step from your config
+    # https://docs.expo.dev/eas-update/introduction/
+    - eas/configure_eas_update:
+        inputs:
+          throw_if_not_configured: false
 
-      # Step to configure EAS Build
-      - name: Configure EAS Build
-        run: eas build:configure
+    - eas/inject_android_credentials
 
-      # Step to run EAS Build for iOS
-      - name: Build with EAS (iOS)
-        run: eas build --platform ios --profile production
+    # you can skip this step if you are not using remote version management
+    # https://docs.expo.dev/build-reference/app-versions/#remote-version-source
+    - eas/configure_android_version
 
-      # Step to upload build artifact
-      - name: Upload iOS build artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: ios-build
-          path: build/ios/*.ipa
+    - eas/run_gradle
+
+    - eas/find_and_upload_build_artifacts

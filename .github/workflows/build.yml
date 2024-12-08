@@ -28,7 +28,7 @@ jobs:
         run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
 
       - name: Build with EAS
-        run: eas build --platform ios --profile release
+        run: eas build:configure
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v3

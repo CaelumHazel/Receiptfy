@@ -24,6 +24,9 @@ jobs:
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
+      - name: Login to Expo EAS
+        run: eas login --token ${{ secrets.EXPO_TOKEN }}
+
       - name: Build with EAS
         run: eas build --platform ios --profile release
 

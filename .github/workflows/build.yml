@@ -10,27 +10,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step to checkout the code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step to set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
 
+      # Step to install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step to install EAS CLI
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
+      # Set Expo token from GitHub Secrets
       - name: Set Expo token
         run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
 
-      - name: Build with EAS
+      # Step to configure EAS Build
+      - name: Configure EAS Build
         run: eas build:configure
 
-      - name: Upload build artifact
+      # Step to run EAS Build for iOS
+      - name: Build with EAS (iOS)
+        run: eas build --platform ios --profile production
+
+      # Step to upload build artifact
+      - name: Upload iOS build artifact
         uses: actions/upload-artifact@v3
         with:
           name: ios-build

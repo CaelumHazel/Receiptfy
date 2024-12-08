@@ -1,0 +1,14 @@
+{
+  "build": {
+    "ios": {
+      "release": {
+        "buildType": "release"
+      }
+    },
+    "android": {
+      "release": {
+        "buildType": "release"
+      }
+    }
+  }
+}

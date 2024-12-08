@@ -1,53 +1,13 @@
 {
-  "build": {
-    "base": {
-      "node": "12.13.0",
-      "yarn": "1.22.5",
-      "env": {
-        "EXAMPLE_ENV": "example value"
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal"
       },
-      "android": {
-        "image": "default",
-        "env": {
-          "PLATFORM": "android"
-        }
+      "preview": {
+        "distribution": "internal"
       },
-      "ios": {
-        "image": "latest",
-        "env": {
-          "PLATFORM": "ios"
-        }
-      }
-    },
-    "development": {
-      "extends": "base",
-      "developmentClient": true,
-      "env": {
-        "ENVIRONMENT": "development"
-      },
-      "android": {
-        "distribution": "internal",
-        "withoutCredentials": true
-      },
-      "ios": {
-        "simulator": true
-      }
-    },
-    "staging": {
-      "extends": "base",
-      "env": {
-        "ENVIRONMENT": "staging"
-      },
-      "distribution": "internal",
-      "android": {
-        "buildType": "apk"
-      }
-    },
-    "production": {
-      "extends": "base",
-      "env": {
-        "ENVIRONMENT": "production"
-      }
+      "production": {}
     }
   }
-}
+  

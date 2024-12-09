@@ -32,9 +32,13 @@ jobs:
       - name: Set Expo token
         run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
 
+      # Step to login to Expo
+      - name: Login to Expo
+        run: eas login --token ${{ secrets.EXPO_TOKEN }}  
+
       # Step to configure EAS Build
       - name: Configure EAS Build
-        run: eas build:configure
+        run: eas build:configure --non-interactive
 
       # Step to run EAS Build for Android (APK)
       - name: Build with EAS (Android APK)

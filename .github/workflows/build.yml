@@ -29,8 +29,8 @@ jobs:
         run: npm install -g eas-cli
 
       # Set Expo token from GitHub Secrets to environment variable
-      - name: Set Expo token
-        run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
+      - name: Expo login
+        run: expo login --token ${{ secrets.EXPO_TOKEN }}
 
       # Configure EAS Build without prompt (using non-interactive mode)
       - name: Configure EAS Build

@@ -10,29 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code from the repository
+      # Step to checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Node.js for the project
+      # Step to set up Node.js for the project
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Install dependencies
+      # Step to install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Install EAS CLI
-      - name: Install EAS CLI
-        run: npm install -g eas-cli
+      # Step to install Expo CLI and EAS CLI
+      - name: Install Expo CLI and EAS CLI
+        run: |
+          npm install -g expo-cli eas-cli
 
       # Set Expo token from GitHub Secrets to environment variable
+      - name: Set Expo token
+        run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
+
+      # Expo login using the token
       - name: Expo login
         run: expo login --token ${{ secrets.EXPO_TOKEN }}
 
-      # Configure EAS Build without prompt (using non-interactive mode)
+      # Configure EAS Build without interactive prompts
       - name: Configure EAS Build
         run: eas build:configure --non-interactive
 

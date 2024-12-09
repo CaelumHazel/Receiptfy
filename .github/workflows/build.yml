@@ -10,41 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step to checkout the code
+      # Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step to set up Node.js
+      # Set up Node.js for the project
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
 
-      # Step to install dependencies
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Step to install EAS CLI
+      # Install EAS CLI
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
-      # Set Expo token from GitHub Secrets
+      # Set Expo token from GitHub Secrets to environment variable
       - name: Set Expo token
         run: echo "EXPO_TOKEN=${{ secrets.EXPO_TOKEN }}" >> $GITHUB_ENV
 
-      # Step to login to Expo
-      - name: Login to Expo
-        run: eas login --token ${{ secrets.EXPO_TOKEN }}  
-
-      # Step to configure EAS Build
+      # Configure EAS Build without prompt (using non-interactive mode)
       - name: Configure EAS Build
         run: eas build:configure --non-interactive
 
-      # Step to run EAS Build for Android (APK)
+      # Run EAS Build for Android (APK)
       - name: Build with EAS (Android APK)
-        run: eas build --platform android --profile androidapk
+        run: eas build --platform android --profile androidapk --non-interactive
 
-      # Step to upload build artifact (APK)
+      # Upload the build artifact (APK)
       - name: Upload Android APK build artifact
         uses: actions/upload-artifact@v3
         with:

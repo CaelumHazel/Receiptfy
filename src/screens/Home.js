@@ -1,75 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, FlatList, TextInput, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
-const recipes = [
-  {
-    id: '1',
-    name: 'Fresh Smoothie',
-    category: 'Juice',
-    duration: '10 mins',
-    status: 'Not Started',
-    difficulty: 'Easy',
-    rating: 4.7,
-    reviews: 89,
-    image: require('../assets/smoothie.jpg'),
-  },
-  {
-    id: '2',
-    name: 'Avocado Salad',
-    category: 'Salad',
-    duration: '10 mins',
-    status: 'On Progress',
-    difficulty: 'Easy',
-    rating: 4.3,
-    reviews: 60,
-    image: require('../assets/salad.jpg'),
-  },
-  {
-    id: '3',
-    name: 'Spaghetti',
-    category: 'Pasta',
-    duration: '20 mins',
-    status: 'Cooked',
-    difficulty: 'Medium',
-    rating: 4.5,
-    reviews: 69,
-    image: require('../assets/spaghetti.jpg'),
-  },
-  {
-    id: '4',
-    name: 'Pizza',
-    category: 'Pizza',
-    duration: '30 mins',
-    status: 'Cooked',
-    difficulty: 'Hard',
-    rating: 4.7,
-    reviews: 100,
-    image: require('../assets/pizza.jpg'),
-  },
-  {
-    id: '5',
-    name: 'Gado-gado',
-    category: 'Salad',
-    duration: '10 mins',
-    status: 'Not Started',
-    difficulty: 'Easy',
-    rating: 4.9,
-    reviews: 100,
-    image: require('../assets/gado.jpg'),
-  },
-  {
-    id: '6',
-    name: 'Soto',
-    category: 'Soup',
-    duration: '30 mins',
-    status: 'On Progress',
-    difficulty: 'Medium',
-    rating: 5,
-    reviews: 100,
-    image: require('../assets/soto.jpg'),
-  },
-];
+import { ref, onValue, get } from 'firebase/database'; // Import Firebase
+import { db } from '../../firebaseConfig';
 
 const maybeYouLikeRecipes = [
   {
@@ -101,22 +34,56 @@ const maybeYouLikeRecipes = [
 const screenWidth = Dimensions.get('window').width;
 
 export default function HomeScreen({ navigation }) {
+  const [recipes, setRecipes] = useState([]);
   const [showAll, setShowAll] = useState(false);
 
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const recipesRef = ref(db, 'recipes');
+        const snapshot = await get(recipesRef);
+    
+        if (snapshot.exists()) {
+          const recipesData = snapshot.val();
+          const updatedRecipes = Object.keys(recipesData).map((key) => ({
+            id: key,
+            ...recipesData[key],
+          }));
+    
+          setRecipes(updatedRecipes);
+        } else {
+          console.log("No recipes found.");
+          setRecipes([]); // Set data kosong jika tidak ada
+        }
+      } catch (error) {
+        console.error("Error fetching recipes:", error.message);
+        setRecipes([]); // Set data kosong jika ada error
+      }
+    };; 
+    fetchRecipes();
+  }, []);
+  
   const displayedRecipes = showAll ? recipes : recipes.slice(0, 4);
 
   const renderItem = ({ item }) => (
     <TouchableOpacity 
       style={styles.card}
-      onPress={() => navigation.navigate(item.name.replace(" ", ""))}
+      onPress={() => navigation.navigate('Detail', {id: item.id})}
     >
-      <Image source={item.image} style={styles.cardImage} />
-      <Text style={[styles.difficultyBadge, styles[`badge${item.difficulty}`]]}>{item.difficulty}</Text>
+      <Image 
+        source={item.image ? { uri: item.image } : require('../assets/pp/beam.jpg')} 
+        style={styles.cardImage} 
+      />
+      <Text style={[styles.difficultyBadge, styles[`badge${item.difficulty}`]]}>
+        {item.difficulty}
+      </Text>
       <View style={styles.cardContent}>
         <Text style={styles.cardTitle}>{item.name}</Text>
         <Text style={styles.category}>{item.category}</Text>
         <Text style={styles.duration}>Estimate: {item.duration}</Text>
-        <Text style={[styles.status, styles[`status${item.status.replace(" ", "")}`]]}>{item.status}</Text>
+        <Text style={[styles.status, styles[`status${item.status.replace(" ", "")}`]]}>
+          {item.status}
+        </Text>
         <View style={styles.ratingContainer}>
           <FontAwesome name="star" size={14} color="#FFD700" />
           <Text style={styles.ratingText}>{item.rating} ({item.reviews}+)</Text>
@@ -124,6 +91,7 @@ export default function HomeScreen({ navigation }) {
       </View>
     </TouchableOpacity>
   );
+  
 
   const renderMaybeYouLikeItem = ({ item }) => (
     <TouchableOpacity style={styles.maybeYouLikeCard}>
@@ -137,6 +105,12 @@ export default function HomeScreen({ navigation }) {
     </TouchableOpacity>
   );
 
+  const handleLogout = () => {
+    // Implementasi logout sesuai kebutuhan
+    console.log('Logout');
+    navigation.replace('Login'); // Contoh navigasi ke halaman login
+  };
+
   return (
     <View style={styles.container}>
       {/* Navbar - Locked at the top */}
@@ -146,6 +120,9 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.header}>
           <Image source={require('../assets/unnamed.jpg')} style={styles.profileImage} />
           <Text style={styles.welcomeText}>Hello Djuanda</Text>
+          <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
+          <FontAwesome name="sign-out" size={24} color="#6C63FF" />
+        </TouchableOpacity>
         </View>
 
         <View style={styles.searchContainer}>
@@ -161,7 +138,7 @@ export default function HomeScreen({ navigation }) {
         
       <Text style={styles.sectionTitle}>Trending Search</Text>
         <View style={styles.trendingContainer}>
-          {['Burgers', 'Brunch', 'Breakfast', 'Pizza', 'Ramsay', 'Chef'].map((item, index) => (
+          {['Burgers', 'Brunch', 'Breakfast', 'Pizza', 'Chef'].map((item, index) => (
             <TouchableOpacity key={index} style={styles.trendingButton}>
               <Text style={styles.trendingText}>{item}</Text>
             </TouchableOpacity>
@@ -209,10 +186,10 @@ export default function HomeScreen({ navigation }) {
         <TouchableOpacity style={styles.navButton}>
           <FontAwesome name="heart" size={20} color="#999" />
           <Text style={styles.navText}>Favorites</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navButton}>
-          <FontAwesome name="book" size={20} color="#999" />
-          <Text style={styles.navText}>Articles</Text>
+        </TouchableOpacity>``
+        <TouchableOpacity style={styles.navButton} onPress={() => navigation.navigate('MapScreen')}>
+          <FontAwesome name="map" size={20} color="#999" />
+          <Text style={styles.navText}>Store</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -421,5 +398,10 @@ const styles = StyleSheet.create({
   navText: {
     fontSize: 12,
     color: '#999',
+  },
+  logoutButton: {
+    position: 'center',
+    left: 170,
+    zIndex: 10,
   },
 });

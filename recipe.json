@@ -1,0 +1,369 @@
+{
+  "recipes": [
+    null,
+    {
+      "category": "Juice",
+      "description": "A refreshing blend of ripe fruits and almond milk, perfect for a healthy snack.",
+      "difficulty": "Easy",
+      "duration": "10 mins",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/smoothie.jpg?alt=media&token=dbf786d0-c050-4cd5-a50b-f9723b29a620",
+      "ingredients": [
+        "1 banana",
+        "1 cup mixed berries",
+        "1 cup ice",
+        "1/2 cup almond milk",
+        "1/4 cup yogurt"
+      ],
+      "name": "Fresh Smoothie",
+      "rating": 4.7,
+      "reviewers": {
+        "review1": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fbeam.jpg?alt=media&token=c28cab64-5979-4289-a97a-75fa4dcdfe1b",
+          "comment": "Delicious and easy to make!",
+          "rating": 5,
+          "reviewer": "Esme Kim"
+        },
+        "review2": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fextract.jpg?alt=media&token=f5b92ee6-0f02-41b9-9b8b-04ec672fb1ba",
+          "comment": "Tasty, but could use more salt.",
+          "rating": 5,
+          "reviewer": "Jane Smith"
+        },
+        "review3": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2FCarter.jpg?alt=media&token=fc2e6317-3c05-4f84-8495-60191a5d6fd0",
+          "comment": "Amazing recipe, thank you!!.",
+          "rating": 5,
+          "reviewer": "Misty Bloong"
+        }
+      },
+      "reviews": 3,
+      "status": "Not Started",
+      "steps": [
+        "Add banana, berries, and ice cube to a blender.",
+        "Pour in almond milk and yogurt.",
+        "Blend until smooth and creamy.",
+        "Pour into a glass and enjoy!"
+      ]
+    },
+    {
+      "category": "Salad",
+      "description": "A mix of fresh greens, creamy avocado, and cherry tomatoes with a light vinaigrette.",
+      "difficulty": "Easy",
+      "duration": "10 mins",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/salad.jpg?alt=media&token=a5da6f1e-8cb1-4589-922f-49b2eef0e23e",
+      "ingredients": [
+        "1 avocado",
+        "1/2 head lettuce",
+        "1/2 cucumber",
+        "1 cup cherry tomatoes",
+        "1 tbsp olive oil"
+      ],
+      "name": "Avocado Salad",
+      "rating": 4.8,
+      "reviewers": {
+        "review1": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fbeam.jpg?alt=media&token=c28cab64-5979-4289-a97a-75fa4dcdfe1b",
+          "comment": "Delicious and easy to make!",
+          "rating": 5,
+          "reviewer": "Gerald Liu"
+        },
+        "review2": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2FCarter.jpg?alt=media&token=fc2e6317-3c05-4f84-8495-60191a5d6fd0",
+          "comment": "Tasty, but could use more salt.",
+          "rating": 5,
+          "reviewer": "Reza Arap"
+        },
+        "review3": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2FScream.jpg?alt=media&token=d7c3232a-0ff6-4e61-b6fb-c76b38fad9f3",
+          "comment": "Amazing recipe, thank you!!.",
+          "rating": 4,
+          "reviewer": "Ericko Lim"
+        }
+      },
+      "reviews": 3,
+      "status": "On Progress",
+      "steps": [
+        "Chop lettuce, cucumber, and cherry tomatoes.",
+        "Dice the avocado and add to the bowl.",
+        "Drizzle olive oil and lemon juice over the salad.",
+        "Add salt and pepper to taste and toss well."
+      ]
+    },
+    {
+      "category": "Pasta",
+      "description": "A classic pasta dish with savory tomato sauce and herbs.",
+      "difficulty": "Medium",
+      "duration": "20 mins",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/spaghetti.jpg?alt=media&token=3edaefde-bd5e-4be2-ac02-4df8be6b59e2",
+      "ingredients": [
+        "200g spaghetti",
+        "2 cups tomato sauce",
+        "2 cloves garlic",
+        "1 tbsp olive oil",
+        "Salt and pepper"
+      ],
+      "name": "Spaghetti",
+      "rating": 4.6,
+      "reviewers": {
+        "review1": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Flean.jpg?alt=media&token=284c373a-e508-434a-86b6-0136a3c773f6",
+          "comment": "Delicious and easy to make!",
+          "rating": 5,
+          "reviewer": "Max Queen"
+        },
+        "review2": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Femo.jpg?alt=media&token=0fa612b7-8eb9-427a-a353-0389b5d74e3b",
+          "comment": "Tasty, but could use more salt.",
+          "rating": 5,
+          "reviewer": "Kim Pyong Yang"
+        },
+        "review3": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2FDie.jpg?alt=media&token=af4e43dd-0c85-4734-9158-0c7be4b6531e",
+          "comment": "Amazing recipe, thank you!!.",
+          "rating": 4,
+          "reviewer": "Ericko Lim"
+        },
+        "review4": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fextract.jpg?alt=media&token=f5b92ee6-0f02-41b9-9b8b-04ec672fb1ba",
+          "comment": "Great taste, easy to make!!.",
+          "rating": 4,
+          "reviewer": "Misty Bloong"
+        }
+      },
+      "reviews": 4,
+      "status": "Cooked",
+      "steps": [
+        "Boil water and cook spaghetti until al dente.",
+        "Heat olive oil in a pan and sauté garlic.",
+        "Add tomato sauce and simmer for 10 minutes.",
+        "Drain spaghetti and toss with sauce."
+      ]
+    },
+    {
+      "category": "Pizza",
+      "description": "A crispy crust topped with cheese, tomato sauce, and favorite toppings.",
+      "difficulty": "Hard",
+      "duration": "30 mins",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pizza.jpg?alt=media&token=23209138-4ec0-4737-bcec-db6cf7730267",
+      "ingredients": [
+        "Pizza dough",
+        "1 cup tomato sauce",
+        "1 cup mozzarella cheese",
+        "Sliced pepperoni",
+        "Dried oregano",
+        "Salt"
+      ],
+      "name": "Pizza",
+      "rating": 4.5,
+      "reviewers": {
+        "review1": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fextract.jpg?alt=media&token=f5b92ee6-0f02-41b9-9b8b-04ec672fb1ba",
+          "comment": "Delicious and easy to make!",
+          "rating": 5,
+          "reviewer": "Max Queen"
+        },
+        "review2": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fyoasobi.jpg?alt=media&token=29a06a96-974a-4d77-994b-e9a243f665e6",
+          "comment": "Tasty, but could use more salt.",
+          "rating": 5,
+          "reviewer": "Kim Pyong Yang"
+        },
+        "review3": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2FDie.jpg?alt=media&token=af4e43dd-0c85-4734-9158-0c7be4b6531e",
+          "comment": "Amazing recipe, thank you!!.",
+          "rating": 4,
+          "reviewer": "Carlo"
+        },
+        "review4": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fsza.jpg?alt=media&token=048aa35f-8abf-4c30-96b6-44e76e7015f1",
+          "comment": "Great taste, easy to make!!.",
+          "rating": 4,
+          "reviewer": "Enzo Ririri"
+        },
+        "review5": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Femo.jpg?alt=media&token=0fa612b7-8eb9-427a-a353-0389b5d74e3b",
+          "comment": "Great taste, easy to make!!.",
+          "rating": 5,
+          "reviewer": "Gerald Liu"
+        }
+      },
+      "reviews": 5,
+      "status": "Cooked",
+      "steps": [
+        "Preheat the oven to 220°C (430°F).",
+        "Roll out the pizza dough and place it on a baking tray.",
+        "Spread the tomato sauce over the dough.",
+        "Add toppings: mozzarella, pepperoni, and more.",
+        "Bake for 10-15 minutes until golden and bubbly.",
+        "Let cool, slice, and serve."
+      ]
+    },
+    {
+      "category": "Salad",
+      "description": "A vibrant Indonesian salad with peanut sauce, vegetables, tofu, and eggs.",
+      "difficulty": "Easy",
+      "duration": "10 mins",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/gado.jpg?alt=media&token=1fe19c52-feef-4239-9b50-e292d83764e7",
+      "ingredients": [
+        "200g tofu, fried",
+        "2 cups mixed vegetables",
+        "2 boiled eggs",
+        "1 cup peanut sauce",
+        "1-2 tbsp lime juice"
+      ],
+      "name": "Gado-Gado",
+      "rating": 4.9,
+      "reviewers": {
+        "review1": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fyoasobi.jpg?alt=media&token=29a06a96-974a-4d77-994b-e9a243f665e6",
+          "comment": "Delicious and easy to make!",
+          "rating": 5,
+          "reviewer": "Max Queen"
+        },
+        "review2": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Flean.jpg?alt=media&token=284c373a-e508-434a-86b6-0136a3c773f6",
+          "comment": "Tasty, but could use more salt.",
+          "rating": 5,
+          "reviewer": "Kim Pyong Yang"
+        },
+        "review3": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2FScream.jpg?alt=media&token=d7c3232a-0ff6-4e61-b6fb-c76b38fad9f3",
+          "comment": "Amazing recipe, thank you!!.",
+          "rating": 4,
+          "reviewer": "Carlo"
+        },
+        "review4": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Femo.jpg?alt=media&token=0fa612b7-8eb9-427a-a353-0389b5d74e3b",
+          "comment": "Great taste, easy to make!!.",
+          "rating": 4,
+          "reviewer": "Enzo Ririri"
+        },
+        "review5": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fsza.jpg?alt=media&token=048aa35f-8abf-4c30-96b6-44e76e7015f1",
+          "comment": "Great taste, easy to make!!.",
+          "rating": 5,
+          "reviewer": "Gerald Liu"
+        }
+      },
+      "reviews": 5,
+      "status": "Not Started",
+      "steps": [
+        "Boil vegetables until tender.",
+        "Prepare boiled eggs and slice them.",
+        "Make the peanut sauce by blending peanuts, garlic, chili, and lime juice.",
+        "Arrange boiled vegetables, tofu, and eggs on a plate.",
+        "Drizzle with peanut sauce and serve."
+      ]
+    },
+    {
+      "category": "Soup",
+      "description": "A flavorful Indonesian soup with tender meat, herbs, and lime.",
+      "difficulty": "Medium",
+      "duration": "30 mins",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/soto.jpg?alt=media&token=96fb6c15-3c0a-40db-b384-853f18d1f58d",
+      "ingredients": [
+        "1 whole chicken",
+        "1 tbsp grated ginger",
+        "1 tbsp turmeric",
+        "Lemongrass",
+        "Salt"
+      ],
+      "name": "Soto",
+      "rating": 4.8,
+      "reviewers": {
+        "review1": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fnewjeans.jpg?alt=media&token=2ea1b329-25a2-413d-92a1-ee38fe485202",
+          "comment": "Delicious and easy to make!",
+          "rating": 5,
+          "reviewer": "Max Queen"
+        },
+        "review2": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fsza.jpg?alt=media&token=048aa35f-8abf-4c30-96b6-44e76e7015f1",
+          "comment": "Tasty, but could use more salt.",
+          "rating": 5,
+          "reviewer": "Kim Pyong Yang"
+        },
+        "review3": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Flean.jpg?alt=media&token=284c373a-e508-434a-86b6-0136a3c773f6",
+          "comment": "Amazing recipe, thank you!!.",
+          "rating": 4,
+          "reviewer": "Carlo"
+        },
+        "review4": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2Fyoasobi.jpg?alt=media&token=29a06a96-974a-4d77-994b-e9a243f665e6",
+          "comment": "Great taste, easy to make!!.",
+          "rating": 4,
+          "reviewer": "Enzo Ririri"
+        },
+        "review5": {
+          "avatar": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/pp%2FScream.jpg?alt=media&token=d7c3232a-0ff6-4e61-b6fb-c76b38fad9f3",
+          "comment": "Great taste, easy to make!!.",
+          "rating": 5,
+          "reviewer": "Gerald Liu"
+        }
+      },
+      "reviews": 5,
+      "status": "On Progress",
+      "steps": [
+        "Boil water and add chicken, cooking until tender.",
+        "Remove the chicken, shred it, and set aside.",
+        "In the same water, add spices: ginger, turmeric, and lemongrass.",
+        "Simmer for 20 minutes to infuse flavors.",
+        "Add shredded chicken back and season with salt.",
+        "Serve hot with rice, boiled eggs, and lime."
+      ]
+    }
+  ],
+  "supermarkets": [
+    null,
+    {
+      "address": "Jl. Sultan Agung No.97, Gajahmungkur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50232",
+      "latitude": -7.0154183,
+      "longitude": 110.4152829,
+      "name": "Gelael Supermarket",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/map%2Fgelael.JPG?alt=media&token=e606d349-6031-48dd-84e8-a42970b9d5ff"
+    },
+    {
+      "address": "Jl. Siliwangi No.322, Salamanmloyo, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50146",
+      "latitude": -6.9835795,
+      "longitude": 110.3628851,
+      "name": "Super Indo Siliwangi",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/map%2Fsuperindo.jpg?alt=media&token=439dbbd9-ef00-41ad-b9e4-078deace31cf"
+    },
+    {
+      "address": "Jl. Pemuda No.76-78, Pandansari, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50133",
+      "latitude": -6.97564,
+      "longitude": 110.41428,
+      "name": "FRUDO",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/map%2Ffrudo.jpeg?alt=media&token=e4c1392a-7c87-4bca-889e-2885fc7aa530"
+    },
+    {
+      "address": " Jl. Brigjen Sudiarto No.132, Pandean Lamper, Kec. Gayamsari, Kota Semarang, Jawa Tengah 50167",
+      "latitude": -6.5878263,
+      "longitude": 107.2126353,
+      "name": "Oharang Beef(아랑)",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/map%2Foharang.jpg?alt=media&token=6c0f6ab2-71e4-4046-8c04-b429d5c54867"
+    },
+    {
+      "address": "Jl. Gajahmada No.95c, Miroto, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50134",
+      "latitude": -6.9810929,
+      "longitude": 110.4023248,
+      "name": "Modern",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/map%2Fmodern.jpg?alt=media&token=4a3cb4a8-1ee4-4261-81d9-193fded18320"
+    },
+    {
+      "address": "Jl. Taman Flamboyan Raya",
+      "latitude": -7.0090328,
+      "longitude": 110.4831469,
+      "name": "Vegie Plus",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/map%2FGARAGE%20PLUS.PNG?alt=media&token=0860b66a-1978-440c-88c9-66f13d78cf17"
+    },
+    {
+      "address": "Jl. Semarang Indah, Tawangmas, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50144",
+      "latitude": -6.9702719,
+      "longitude": 110.3993943,
+      "name": "Flozo Meat",
+      "image": "https://firebasestorage.googleapis.com/v0/b/mamatgunshop-1bf17.appspot.com/o/map%2Fflozo.jpg?alt=media&token=4016633f-c9fb-444a-bac4-8ba0e71e0b89"
+    }
+  ]
+}

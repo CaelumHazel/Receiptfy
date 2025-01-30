@@ -5,12 +5,8 @@ import LoginScreen from './src/screens/Login';
 import RegisterScreen from './src/screens/Register';
 import LoadingScreen from './src/screens/Loading';
 import HomeScreen from './src/screens/Home';
-import FreshSmoothieScreen from './src/screens/Juice';
-import AvocadoSaladScreen from './src/screens/Avocado';
-import SpaghettiScreen from './src/screens/Pasta';
-import PizzaScreen from './src/screens/Pizza';
-import GadoScreen from './src/screens/Gado-gado';
-import SotoScreen from './src/screens/Soto'
+import DetailScreen from './src/screens/Detail'
+import MapScreen from './src/screens/MapScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,13 +17,9 @@ export default function AppNavigator() {
       <Stack.Screen name="Login" component={LoginScreen}/>
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Loading" component={LoadingScreen}/>
+      <Stack.Screen name="MapScreen" component={MapScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="FreshSmoothie" component={FreshSmoothieScreen} />
-      <Stack.Screen name="AvocadoSalad" component={AvocadoSaladScreen} />
-      <Stack.Screen name="Spaghetti" component={SpaghettiScreen} />
-      <Stack.Screen name="Pizza" component={PizzaScreen} />
-      <Stack.Screen name="Gado-gado" component={GadoScreen} />
-      <Stack.Screen name="Soto" component={SotoScreen} />
+      <Stack.Screen name="Detail" component={DetailScreen}/>
     </Stack.Navigator>
   );
 }

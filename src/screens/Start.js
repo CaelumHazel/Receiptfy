@@ -15,7 +15,7 @@ export default function StartScreen({ navigation }) {
       <Text style={styles.subtitle}>Everybody can Cook</Text>
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.replace('Login')}
       >
         <Text style={styles.buttonText}>Let’s Cook</Text>
       </TouchableOpacity>

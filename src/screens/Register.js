@@ -1,16 +1,32 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Dimensions, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebaseConfig'; // Jika firebaseConfig di root
+
+console.log(auth);
 
 export default function RegisterScreen({ navigation }) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const handleLogin = () => {
-    navigation.navigate('Loading'); // Navigate to LoadingScreen first
+
+  const handleRegister = async () => {
+    if (password !== confirmPassword) {
+      Alert.alert("Error", "Passwords do not match");
+      return;
+    }
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      Alert.alert("Success", "Account created successfully!");
+      navigation.navigate('Login');
+    } catch (error) {
+      Alert.alert("Registration Failed", error.message);
+    }
   };
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -77,7 +93,7 @@ export default function RegisterScreen({ navigation }) {
 
           <TouchableOpacity 
           style={styles.signUpButton}
-          onPress={handleLogin}>
+          onPress={handleRegister}>
             <Text style={styles.signUpText}>Sign up</Text>
           </TouchableOpacity>
 
